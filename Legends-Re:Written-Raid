@@ -1,0 +1,2 @@
+--Legends ReWritten World Raid
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XHUBBEE/XHUB-Script/main/Legends%20Re%3AWritten%20Raid"))()
