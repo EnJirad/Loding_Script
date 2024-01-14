@@ -1,51 +1,28 @@
 {
 No: 1
-Name: Genshin Impact
-Package: com.miHoYo.GenshinImpact
-HWID: 24:8e:de:49:c6:87
+Name: 
+Package: 
+HWID: 
 Key: lvZhnDrq6XwFc3pQeLEX1PWmfKVmL5u1
-S_date: 14/01/2024
-S_Time: 16:57:45
+S_date: 
+S_Time: 
 E_date: 14/02/2025 
-E_Time: 16:56:34 
 }
 No: 2
-Name: Genshin Impact
-Package: com.miHoYo.GenshinImpact
-HWID: 24:8e:de:49:c6:87
+Name: 
+Package: 
+HWID: 
 Key: RKPtxD5SxntEXqpJVosgC1ObJXk4j73N
-S_date: 14/01/2024
-S_Time: 16:57:45
-E_date: 14/02/2025 
-E_Time: 16:56:34 
+S_date: 
+S_Time: 
+E_date: 14/02/2025  
 }
 No: 3
-Name: Genshin Impact
-Package: com.miHoYo.GenshinImpact
-HWID: 24:8e:de:49:c6:87
+Name: 
+Package: 
+HWID: 
 Key: tSNB1QEoCaly08dTlCxJkXQux3smxm40
-S_date: 14/01/2024
-S_Time: 16:57:45
-E_date: 14/02/2025 
-E_Time: 16:56:34 
-}
-No: 4
-Name: Genshin Impact
-Package: com.miHoYo.GenshinImpact
-HWID: 24:8e:de:49:c6:87
-Key: sZZSZJdYKHCELKTHPbuQHvE0BfhDeFDs
-S_date: 14/01/2024
-S_Time: 16:57:45
-E_date: 14/02/2025 
-E_Time: 16:56:34 
-}
-No: 5
-Name: Genshin Impact
-Package: com.miHoYo.GenshinImpact
-HWID: 24:8e:de:49:c6:87
-Key: MAJGZmRKuli0Sbye4yE0T2J97EAaONGT
-S_date: 14/01/2024
-S_Time: 16:57:45
-E_date: 14/02/2025 
-E_Time: 16:56:34 
+S_date: 
+S_Time: 
+E_date: 14/02/2025
 }
