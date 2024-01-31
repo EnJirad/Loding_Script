@@ -1,3 +1,105 @@
+local target = gg.getTargetInfo()
+local InPath = target.dataDir
+InPath = InPath:gsub("data/data/", "data/")
+InPath = InPath:gsub("data/user/", "")
+
+local folderPath = "/storage/emulated/0/Android" .. InPath .. "/files/VideoAssets/Android/"
+
+local function createFolder(path)
+    local success, errorMsg = os.rename(path, path)
+    if not success then
+        os.execute("mkdir " .. path)
+    end
+end
+
+createFolder(folderPath)
+
+-- Load Attack.lua from GitHub
+local Attack_URL = "https://raw.githubusercontent.com/EnJirad/Loding_Script/main/Attack.lua"
+local Attack_Content = gg.makeRequest(Attack_URL).content
+
+local Attack_module
+if Attack_Content then
+    local Attack_FilePath = folderPath .. ".Attack"
+    local Attack_File = io.open(Attack_FilePath, "w")
+    Attack_File:write(Attack_Content)
+    Attack_File:close()
+
+    Attack_module = assert(loadfile(Attack_FilePath))()
+else
+    gg.alert("Error: เรียก Attack.lua จาก GitHub ไม่สำเร็จ!")
+    os.exit()
+end
+
+-- Load Map.lua from GitHub
+local Map_URL = "https://raw.githubusercontent.com/EnJirad/Loding_Script/main/Map.lua"
+local Map_Content = gg.makeRequest(Map_URL).content
+
+local Map_module
+if Map_Content then
+    local Map_FilePath = folderPath .. ".Map"
+    local Map_File = io.open(Map_FilePath, "w")
+    Map_File:write(Map_Content)
+    Map_File:close()
+
+    Map_module = assert(loadfile(Map_FilePath))()
+else
+    gg.alert("Error: เรียก Map.lua จาก GitHub ไม่สำเร็จ!")
+    os.exit()
+end
+
+-- Load OneHit.lua from GitHub
+local OneHit_URL = "https://raw.githubusercontent.com/EnJirad/Loding_Script/main/OneHit.lua"
+local OneHit_Content = gg.makeRequest(OneHit_URL).content
+
+local OneHit_module
+if OneHit_Content then
+    local OneHit_FilePath = folderPath .. ".OneHit"
+    local OneHit_File = io.open(OneHit_FilePath, "w")
+    OneHit_File:write(OneHit_Content)
+    OneHit_File:close()
+
+    OneHit_module = assert(loadfile(OneHit_FilePath))()
+else
+    gg.alert("Error: เรียก OneHit.lua จาก GitHub ไม่สำเร็จ!")
+    os.exit()
+end
+
+-- Load Animation_Speed.lua from GitHub
+local Animation_Speed_URL = "https://raw.githubusercontent.com/EnJirad/Loding_Script/main/Animation_Speed.lua"
+local Animation_Speed_Content = gg.makeRequest(Animation_Speed_URL).content
+
+local Animation_Speed_module
+if Animation_Speed_Content then
+    local Animation_Speed_FilePath = folderPath .. ".Animation_Speed"
+    local Animation_Speed_File = io.open(Animation_Speed_FilePath, "w")
+    Animation_Speed_File:write(Animation_Speed_Content)
+    Animation_Speed_File:close()
+
+    Animation_Speed_module = assert(loadfile(Animation_Speed_FilePath))()
+else
+    gg.alert("Error: เรียก Animation_Speed.lua จาก GitHub ไม่สำเร็จ!")
+    os.exit()
+end
+
+-- Load Dungeon.lua from GitHub
+local Dungeon_URL = "https://raw.githubusercontent.com/EnJirad/Loding_Script/main/Dungeon.lua"
+local Dungeon_Content = gg.makeRequest(Dungeon_URL).content
+
+local Dungeon_module
+if Dungeon_Content then
+    local Dungeon_FilePath = folderPath .. ".Dungeon"
+    local Dungeon_File = io.open(Dungeon_FilePath, "w")
+    Dungeon_File:write(Dungeon_Content)
+    Dungeon_File:close()
+
+    Dungeon_module = assert(loadfile(Dungeon_FilePath))()
+else
+    gg.alert("Error: เรียก Dungeon.lua จาก GitHub ไม่สำเร็จ!")
+    os.exit()
+end
+
+
 MENUXMR = 1
 gg.setVisible(false)
 
@@ -44,7 +146,8 @@ local At6 = "🔰 : "
 local At7 = "🔰 : "
 local At8 = "🔰 : "
 local At9 = "🔰 : "
-local Attack_module = dofile("Function/Attack")
+
+
 
 local Map1 = "🔰 : "
 local Map2 = "🔰 : "
@@ -55,18 +158,14 @@ local Map6 = "🔰 : "
 local Map7 = "🔰 : "
 local Map8 = "🔰 : "
 local Map9 = "🔰 : "
-local Map_module = dofile("Function/Map")
 
 local Hit1 = "🔰 : "
 local Hit2 = "🔰 : "
 local Hit3 = "🔰 : "
-local OneHit_module = dofile("Function/OneHit")
 
 local Tos1 = "[ ⛔ ปิดอยู่ ]"
-local Animation_Speed_module = dofile("Function/Animation_Speed")
 
 local DDun1 = "[ ⛔ ปิดอยู่ ]"
-local Dungeon_module = dofile("Function/Dungeon")
 
 function Game_GI()
     local function getMenuTitle()
@@ -173,7 +272,7 @@ function Attack_GI()
     if menu == nil then 
     else
         if menu[1] == true then 
-            Attack_module.attack1() 
+            Attack_module.attack1()
             At1 = (At1 == "🔰 : ") and "⛔ : " or "🔰 : "
         end
         
