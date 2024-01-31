@@ -176,6 +176,7 @@ function module.map6()
         gg.setRanges(gg.REGION_ANONYMOUS)
         gg.clearResults()
         gg.searchNumber("-1.89999997616;6.0:5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+
         gg.refineNumber("-1.89999997616", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
         Map6_Original_1 = gg.getResults(1500)
         gg.editAll("0", gg.TYPE_FLOAT)
@@ -266,6 +267,12 @@ function module.map8()
                 {["value"] = -509583744, ["type"] = 4},
                 {["lv"] = 2248, ["offset"] = 64, ["type"] = 4}
             }
+            
+            if gg.getResultsCount() == 0 then
+                gg.alert("ไม่พบค่าใดๆ กรุณาลองใหม่อีกครั้ง")
+                return
+            end
+
             qmxg = {
                 {["value"] = 1, ["offset"] = 32, ["type"] = 16}
             }
@@ -275,6 +282,7 @@ function module.map8()
         Map8 = "🔰 : "
     end
 end
+
 
 local Map9 = "🔰 : "
 local Map9_Original = {}
